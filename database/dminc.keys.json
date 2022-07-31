@@ -1,0 +1,4 @@
+{"_id":{"$oid":"62e6104bca18ea2d7534dc8b"},"name":"item D","description":"This is test description for item D","price":{"$numberInt":"500"}}
+{"_id":{"$oid":"62e6104bca18ea2d7534dc8c"},"name":"item C","description":"This is test description for item C","price":{"$numberInt":"120"}}
+{"_id":{"$oid":"62e6104bca18ea2d7534dc8d"},"name":"item B","description":"This is test description for item B","price":{"$numberInt":"150"}}
+{"_id":{"$oid":"62e6104bca18ea2d7534dc8e"},"name":"item A","description":"This is test description for item A","price":{"$numberInt":"100"}}

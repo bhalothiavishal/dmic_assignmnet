@@ -1,0 +1,9 @@
+{"_id":{"$oid":"62e61310ca18ea2d7534dc9d"},"first_name":"Chandu","last_name":"Prakash","truck_no":{"$numberInt":"11"}}
+{"_id":{"$oid":"62e61310ca18ea2d7534dc9c"},"first_name":"Kapil","last_name":"Kumar","truck_no":{"$numberInt":"9"}}
+{"_id":{"$oid":"62e61310ca18ea2d7534dc9b"},"first_name":"Mohan","last_name":"ram","truck_no":{"$numberInt":"20"}}
+{"_id":{"$oid":"62e61310ca18ea2d7534dc9a"},"first_name":"Pushpa","last_name":"Rao","truck_no":{"$numberInt":"12"}}
+{"_id":{"$oid":"62e61310ca18ea2d7534dc99"},"first_name":"Rohit","last_name":"Bind","truck_no":{"$numberInt":"10"}}
+{"_id":{"$oid":"62e61310ca18ea2d7534dc98"},"first_name":"Vipin","last_name":"Verma","truck_no":{"$numberInt":"8"}}
+{"_id":{"$oid":"62e61310ca18ea2d7534dc97"},"first_name":"Aman","last_name":"babbar","truck_no":{"$numberInt":"3"}}
+{"_id":{"$oid":"62e61310ca18ea2d7534dc96"},"first_name":"Kishor","last_name":"Rastogi","truck_no":{"$numberInt":"5"}}
+{"_id":{"$oid":"62e61310ca18ea2d7534dc95"},"first_name":"Raju","last_name":"Rastogi","truck_no":{"$numberInt":"1"}}

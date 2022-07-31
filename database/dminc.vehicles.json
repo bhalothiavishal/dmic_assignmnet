@@ -1,0 +1,9 @@
+{"_id":{"$oid":"62e6119dca18ea2d7534dc8f"},"year":{"$numberInt":"2020"},"make":"BMW","model":"L","vin":{"$numberInt":"111552"},"key_id":{"$oid":"62e6104bca18ea2d7534dc8c"}}
+{"_id":{"$oid":"62e6119dca18ea2d7534dc90"},"year":{"$numberInt":"2021"},"make":"Tata","model":"C","vin":{"$numberInt":"1774565"},"key_id":{"$oid":"62e6104bca18ea2d7534dc8d"}}
+{"_id":{"$oid":"62e6119dca18ea2d7534dc91"},"year":{"$numberInt":"2018"},"make":"KIA","model":"G","vin":{"$numberInt":"1994565"},"key_id":{"$oid":"62e6104bca18ea2d7534dc8d"}}
+{"_id":{"$oid":"62e6119dca18ea2d7534dc92"},"year":{"$numberInt":"2018"},"make":"BMW","model":"D","vin":{"$numberInt":"6554789"},"key_id":{"$oid":"62e6104bca18ea2d7534dc8e"}}
+{"_id":{"$oid":"62e6119dca18ea2d7534dc93"},"year":{"$numberInt":"2017"},"make":"Maruti","model":"A","vin":{"$numberInt":"6598121"},"key_id":{"$oid":"62e6104bca18ea2d7534dc8e"}}
+{"_id":{"$oid":"62e6119dca18ea2d7534dc94"},"year":{"$numberInt":"2021"},"make":"Tata","model":"K","vin":{"$numberInt":"6549871"},"key_id":{"$oid":"62e6104bca18ea2d7534dc8e"}}
+{"_id":{"$oid":"62e63abeca18ea2d7534dc9e"},"year":{"$numberInt":"2020"},"make":"BMW","model":"A","vin":{"$numberInt":"1324565"},"key_id":{"$oid":"62e6104bca18ea2d7534dc8c"}}
+{"_id":{"$oid":"62e63abeca18ea2d7534dc9f"},"year":{"$numberInt":"2014"},"make":"Maruti","model":"K","vin":{"$numberInt":"1324565"},"key_id":{"$oid":"62e6104bca18ea2d7534dc8b"}}
+{"_id":{"$oid":"62e63abeca18ea2d7534dca0"},"year":{"$numberInt":"2011"},"make":"Audi","model":"A","vin":{"$numberInt":"987456"},"key_id":{"$oid":"62e6104bca18ea2d7534dc8b"}}
