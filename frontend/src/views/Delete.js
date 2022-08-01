@@ -11,7 +11,7 @@ const Delete = (props) => {
         const result = await Swal.fire(SwalConfig);
         if (result.value) {
             let postJson = { id: item.id };
-            let path = apiUrl.delete_order+"/"+item.id;
+            let path = apiUrl.delete_order+"/"+item._id;
             const fr = await Helper.delete(path);
             const res = await fr.response.json();
             if (fr.status === 200) {

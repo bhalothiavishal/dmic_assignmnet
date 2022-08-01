@@ -160,7 +160,7 @@ function Orders() {
                                         <td className="text-align-center">
 
                                             <div>
-                                                <Link to={{ pathname: `/edit-order/${item.id}` }} className="btn-link">
+                                                <Link to={{ pathname: `/edit-order/${item._id}` }} className="btn-link">
                                                     <button className="btn btn-warning btn-sm mr-2" type="button" title="Delete">
                                                         Edit
                                                     </button>
