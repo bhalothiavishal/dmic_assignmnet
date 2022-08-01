@@ -61,7 +61,7 @@ function Orders() {
         if (fr.status === 200) {
             if (res.success) {
                 setOrders(res.results.docs || []);
-                setTotalItems(res.totalItems);
+                setTotalItems(res.results.totalDocs);
                 setIsserach(false);
             } else {
                 // alert.error(res.msg);
