@@ -8,23 +8,21 @@ var helper = {
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
     },
-    setSearchParams: function (conditions, params) {
+    setSearchParams: function (conditions, params) {     
 
-      
-
-        if (!_.isEmpty(params.keyword)) {
-            let queryClause = params.keyword;
-            // console.log("queryClause",queryClause);
-            // console.log("queryClause1",queryClause.split(" "));
-            conditions = {
-                $or: [
-                    { username: { $regex: '.*' + queryClause + '.*', $options: 'i' } },
-                    { first_name: { $regex: '.*' + queryClause.split(" ")[0] + '.*', $options: 'i' } },
-                    { last_name: { $regex: '.*' + queryClause.split(" ")[0] + '.*', $options: 'i' } },
-                    { last_name: { $regex: '.*' + queryClause.split(" ")[1] + '.*', $options: 'i' } },                
-                ]
-            };
-        }              
+        // if (!_.isEmpty(params.keyword)) {
+        //     let queryClause = params.keyword;
+        //     // console.log("queryClause",queryClause);
+        //     // console.log("queryClause1",queryClause.split(" "));
+        //     conditions = {
+        //         $or: [
+        //             { "key_id.name": { $regex: '.*' + 'item A' + '.*', $options: 'i' } },
+        //             { first_name: { $regex: '.*' + queryClause.split(" ")[0] + '.*', $options: 'i' } },
+        //             { last_name: { $regex: '.*' + queryClause.split(" ")[0] + '.*', $options: 'i' } },
+        //             { last_name: { $regex: '.*' + queryClause.split(" ")[1] + '.*', $options: 'i' } },                
+        //         ]
+        //     };
+        // }              
 
         if (!_.isEmpty(params.status) && params.status !='') {
             let status = params.status;

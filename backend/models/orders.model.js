@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 var _ = require('lodash');
 var mongoosePaginate = require('mongoose-paginate-v2');
+const mongooseAggregatePaginate = require("mongoose-aggregate-paginate-v2");
 var uniqueValidator = require('mongoose-unique-validator');
+
 var config = require('../config/config');
 
 const OrdersSchema = mongoose.Schema({
@@ -18,6 +20,7 @@ const OrdersSchema = mongoose.Schema({
 }
 );
 
-OrdersSchema.plugin(mongoosePaginate);
+// OrdersSchema.plugin(mongoosePaginate);
+OrdersSchema.plugin(mongooseAggregatePaginate);
 OrdersSchema.plugin(uniqueValidator, { message: 'Field {PATH} should be unique.' });
 module.exports = mongoose.model('Orders', OrdersSchema);

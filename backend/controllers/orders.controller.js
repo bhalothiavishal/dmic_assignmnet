@@ -126,17 +126,58 @@ exports.login = async (req, res) => {
 exports.order_listing = async (req, res) => {
     var response = { "success": false, "msg": "Invalid Request", "errors": [], 'results': [] };
     try {
-        let sortOptions = {};
-        sortOptions["createdAt"] = -1;
+        let keyword = req.query.keyword?.trim() || "";
         let options = {
             page: Number(req.query.page || process.env.defaultPage),
             limit: Number(req.query.itemsPerPage || process.env.defaultPageSize),
-            sort: sortOptions
         };
-        let conditions = {};
-        conditions = Helper.setSearchParams(conditions, req.query);
-        options.populate = [{ path: 'key_id', select: 'name price' }, { path: 'vehicle_id', select: 'make vin' }, { path: 'technician_id', select: 'first_name last_name' }];
-        const allOrdersList = await Orders.paginate(conditions, options);
+        let aggregateCondition = [
+            { $match: { status: { $ne: 'deleted' } } },
+            {
+                $lookup: {
+                    from: "keys",
+                    localField: "key_id",
+                    foreignField: "_id",
+                    as: "key_id"
+                }
+            },
+            {
+                $lookup: {
+                    from: "vehicles",
+                    localField: "vehicle_id",
+                    foreignField: "_id",
+                    as: "vehicle_id"
+                }
+            },
+            {
+                $lookup: {
+                    from: "technicians",
+                    localField: "technician_id",
+                    foreignField: "_id",
+                    as: "technician_id"
+                }
+            },
+            { $unwind: "$key_id" }, { $unwind: "$vehicle_id" }, { $unwind: "$technician_id" },
+            {
+                $match: {
+                    $or: [
+                        { "order_no": Number(keyword) },
+                        { "key_id.name": { $regex: '.*' + keyword + '.*', $options: 'i' } },
+                        { "key_id.price": Number(keyword) },
+                        { "vehicle_id.make": { $regex: '.*' + keyword + '.*', $options: 'i' } },
+                        { "vehicle_id.vin": Number(keyword) },
+                        { "technician_id.first_name": { $regex: '.*' + keyword + '.*', $options: 'i' } },
+                        { "technician_id.last_name": { $regex: '.*' + keyword + '.*', $options: 'i' } }
+                    ]
+
+                }
+            },
+            { $sort: { "rows.created_at": -1 } }
+        ];
+        let aggrigateList = Orders.aggregate(aggregateCondition);
+
+        const allOrdersList = await Orders.aggregatePaginate(aggrigateList, options);
+        console.log(allOrdersList);
         response.success = true;
         response.msg = Messages.ALL_USERS_SUCCESS;
         response.results = allOrdersList;
